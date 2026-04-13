@@ -18,7 +18,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 @Composable
 fun Pantalla1(){
 
-    val vm: Pantalla1_ViewModel = viewModel()
+    val vm: Pantalles_ViewModel = viewModel()
     val character by vm.character.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) {
