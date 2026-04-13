@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun Pantalla3(navigate: () -> Unit){
+fun Pantalla3(){
     Box(Modifier.fillMaxSize().background(Color.White), contentAlignment = Alignment.Center){
 
             Text("Aquesta és la Pantalla 3", color = Color.Black)

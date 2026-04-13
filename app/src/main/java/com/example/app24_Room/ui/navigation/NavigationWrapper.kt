@@ -11,6 +11,7 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.example.app24_Room.ui.screen.Pantalla1
+import com.example.app24_Room.ui.screen.Pantalla2
 import com.example.app24_Room.ui.screen.Pantalla3
 
 @Composable
@@ -42,9 +43,9 @@ fun NavigationWrapper(){
             modifier = Modifier.padding(innerPadding),
             onBack = { backStack.removeLastOrNull() },
             entryProvider = entryProvider {
-                entry<Route.Pantalla1> { Pantalla1( {}) }
-                entry<Route.Pantalla2> { Pantalla2Navigation() }
-                entry<Route.Pantalla3> { Pantalla3( {}) }
+                entry<Route.Pantalla1> { Pantalla1() }
+                entry<Route.Pantalla2> { Pantalla2() }
+                entry<Route.Pantalla3> { Pantalla3() }
             }
         )
 

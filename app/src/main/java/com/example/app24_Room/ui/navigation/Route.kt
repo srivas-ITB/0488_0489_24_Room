@@ -11,8 +11,3 @@ sealed class Route: NavKey {
     @Serializable
     data object Pantalla3: Route()
 }
-
-sealed class Pantalla2Route : NavKey {
-    @Serializable data object Pantalla2 : Pantalla2Route()
-    @Serializable data object Pantalla2_1 : Pantalla2Route()
-}
