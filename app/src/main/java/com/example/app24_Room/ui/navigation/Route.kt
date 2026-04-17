@@ -10,4 +10,8 @@ sealed class Route: NavKey {
     data object Pantalla2: Route()
     @Serializable
     data object Pantalla3: Route()
+
+    @Serializable
+    data class DetailScreen(val id:Int): Route()
+
 }

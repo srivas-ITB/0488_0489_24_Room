@@ -10,4 +10,6 @@ class Repository {
     suspend fun deleteFavorite(character: CharacterEntity) = daoInterface.deleteCharacter(character)
     suspend fun isFavorite(characterId: Int) = daoInterface.getCharacterById(characterId)
     suspend fun getFavorites() = daoInterface.getAllCharacters()
+
+    suspend fun getCharacterById(characterId: Int) = daoInterface.getCharacterById(characterId)
 }

@@ -15,6 +15,9 @@ class Pantalles_ViewModel : ViewModel() {
     private val _character = MutableStateFlow<CharacterEntity?>(null)
     val character: StateFlow<CharacterEntity?> = _character.asStateFlow()
 
+    private val _charactersList = MutableStateFlow<MutableList<CharacterEntity>>(mutableListOf())
+    val charactersList: StateFlow<MutableList<CharacterEntity>> = _charactersList.asStateFlow()
+
     private val _error = MutableStateFlow<String>("")
     val error: StateFlow<String> = _error.asStateFlow()
 
@@ -22,14 +25,22 @@ class Pantalles_ViewModel : ViewModel() {
     fun getCharacters() {
         viewModelScope.launch(Dispatchers.IO) {
 
-            val response = repository.getFavorites()
-            if (response.isEmpty()) {
+            _charactersList.value = repository.getFavorites()
+            if (_charactersList.value.isEmpty()) {
                 _character.value = null
             } else {
-                _character.value = response.get(0)
+                _character.value = _charactersList.value.get(0)
             }
         }
     }
+
+    fun getCharacterById(id:Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            _character.value = repository.getCharacterById(id)
+        }
+    }
+
+
 
     fun saveCharacter(c: CharacterEntity) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -42,16 +53,7 @@ class Pantalles_ViewModel : ViewModel() {
         }
     }
 
-//    fun getCharacterByUrl(url:String) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            val response = repository.getCharacterByUrl(url)
-//            withContext(Dispatchers.Main) {
-//                if (response.isSuccessful) {
-//                    _character.value = response.body()
-//                } else {
-//                    Log.e("Error :", response.message())
-//                }
-//            }
-//        }
-//    }
+
+
+
 }

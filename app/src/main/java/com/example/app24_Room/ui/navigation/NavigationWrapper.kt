@@ -45,7 +45,9 @@ fun NavigationWrapper(){
             entryProvider = entryProvider {
                 entry<Route.Pantalla1> { Pantalla1() }
                 entry<Route.Pantalla2> { Pantalla2() }
-                entry<Route.Pantalla3> { Pantalla3() }
+                entry<Route.Pantalla3> { Pantalla3()
+                     { id -> backStack.add(Route.DetailScreen(id)) }
+                }
             }
         )
 
