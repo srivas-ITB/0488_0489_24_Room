@@ -1,4 +1,5 @@
-import androidx.compose.foundation.Image
+package com.example.app24_Room.ui.screen
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,13 +10,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.app24_Room.R
-import com.example.app24_Room.ui.screen.Pantalles_ViewModel
 
 @Composable
 fun DetailScreen(idCharacter: Int, navigateBack: () -> Unit) {

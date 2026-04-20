@@ -33,7 +33,7 @@ class Pantalles_ViewModel : ViewModel() {
             _charactersList.value = repository.getFavorites()
             if (_charactersList.value.isEmpty()) {
                 _character.value = null
-            } else if (_charactersList.value.size < position.value) {
+            } else if (_charactersList.value.size > position.value && position.value >= 0) {
                 _character.value = _charactersList.value.get(position.value)
             } else {
                 _character.value = null
@@ -48,13 +48,17 @@ class Pantalles_ViewModel : ViewModel() {
     }
 
     fun next() {
-        _position.update { _position.value + 1 }
-        getCharacters()
+        if (_position.value < charactersList.value.size ) {
+            _position.update { _position.value + 1 }
+            getCharacters()
+        }
     }
 
     fun previous() {
-        _position.update { _position.value -1 }
-        getCharacters()
+        if (_position.value > 0 ) {
+            _position.update { _position.value - 1 }
+            getCharacters()
+        }
     }
 
     fun saveCharacter(c: CharacterEntity) {
