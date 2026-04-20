@@ -30,15 +30,15 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.app24_Room.entity.CharacterEntity
 import kotlinx.coroutines.launch
 
-//@Composable
-//fun Pantalla3() {
-//    Box(Modifier.fillMaxSize().background(Color.White), contentAlignment = Alignment.Center) {
-//
-//        Text("Aquesta és la Pantalla 3", color = Color.Black)
-//
-//    }
-//}
+@Composable
+fun Pantalla3(navigateToDetail: (Int) -> Unit) {
+    Box(Modifier.fillMaxSize().background(Color.White), contentAlignment = Alignment.Center) {
 
+        Text("Aquesta és la Pantalla 3", color = Color.Black)
+
+    }
+}
+/*
 
     @Composable
     fun Pantalla3(navigateToDetail: (Int) -> Unit) {
